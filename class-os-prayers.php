@@ -83,6 +83,7 @@ class OS_PRAYERS {
 		add_action( 'pre_get_posts', array( $this,'os_prayer_query' ) );
 		
 		// Alter Prayer Request Query
+		add_action('admin_head', array( $this, 'plugin_header' ) );
 		
 	}
 
@@ -140,10 +141,12 @@ class OS_PRAYERS {
     ?>
     <style>
 	    <?php if (($_GET['post_type'] == 'os_prayer_request')) : ?>
-	    #icon-edit { background:transparent url('<?php echo 'includes/book-open-bookmark.png';?>') no-repeat; }     
+	    #icon-edit { background:transparent url('<?php echo plugins_url( 'includes/book-open-bookmark.png' , __FILE__ );?>') no-repeat; background-position-y: -15px !important;}     
 	    <?php endif; ?>
-	    #adminmenu #menu-posts-os_prayer_request div.wp-menu-image{background:transparent url("<?php echo 'includes/book-open-bookmark.png';?>") no-repeat center center;}
-	    #adminmenu #menu-posts-os_prayer_request:hover div.wp-menu-image,#adminmenu #menu-posts-os_prayer_request.wp-has-current-submenu div.wp-menu-image{background:transparent url("<?php echo 'includes/book-open-bookmark.png';?>") no-repeat center center;}  
+	    #adminmenu #menu-posts-os_prayer_request div.wp-menu-image{background:transparent url('<?php echo plugins_url( 'includes/book-open-bookmark.png' , __FILE__ );?>') no-repeat center center;background-position-y:-18px !important; }
+	    #adminmenu #menu-posts-os_prayer_request.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo plugins_url( 'includes/book-open-bookmark.png' , __FILE__ );?>') no-repeat center center;}  
+	    #adminmenu #menu-posts-os_prayer_request:hover div.wp-menu-image {background:transparent url('<?php echo plugins_url( 'includes/book-open-bookmark.png' , __FILE__ );?>') no-repeat center center;background-position-y: 6px !important;}  
+
 	</style>
 	<?php
 	}
