@@ -83,7 +83,6 @@ class OS_PRAYERS {
 		add_action( 'pre_get_posts', array( $this,'os_prayer_query' ) );
 		
 		// Alter Prayer Request Query
-		add_action('admin_head', array( $this,'plugin_header'));
 		
 	}
 
