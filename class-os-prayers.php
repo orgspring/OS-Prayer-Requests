@@ -143,8 +143,8 @@ class OS_PRAYERS {
 	    <?php if (($_GET['post_type'] == 'os_prayer_request')) : ?>
 	    #icon-edit { background:transparent url('<?php echo 'includes/book-open-bookmark.png';?>') no-repeat; }     
 	    <?php endif; ?>
-	    #adminmenu #menu-posts-gallery div.wp-menu-image{background:transparent url("<?php echo 'includes/book-open-bookmark.png';?>") no-repeat center center;}
-	    #adminmenu #menu-posts-gallery:hover div.wp-menu-image,#adminmenu #menu-posts-gallery.wp-has-current-submenu div.wp-menu-image{background:transparent url("<?php echo 'includes/book-open-bookmark.png';?>") no-repeat center center;}  
+	    #adminmenu #menu-posts-os_prayer_request div.wp-menu-image{background:transparent url("<?php echo 'includes/book-open-bookmark.png';?>") no-repeat center center;}
+	    #adminmenu #menu-posts-os_prayer_request:hover div.wp-menu-image,#adminmenu #menu-posts-os_prayer_request.wp-has-current-submenu div.wp-menu-image{background:transparent url("<?php echo 'includes/book-open-bookmark.png';?>") no-repeat center center;}  
 	</style>
 	<?php
 	}
