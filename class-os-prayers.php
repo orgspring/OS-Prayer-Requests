@@ -81,7 +81,9 @@ class OS_PRAYERS {
 
 		// Alter Prayer Request Query
 		add_action( 'pre_get_posts', array( $this,'os_prayer_query' ) );
-
+		
+		// Alter Prayer Request Query
+		add_action('admin_head', array( $this,'plugin_header'));
 		
 	}
 
@@ -124,6 +126,27 @@ class OS_PRAYERS {
 			$query->set( 'meta_key', 'cmb_ospr_privacy' );
 		}
 	 
+	}
+	
+	/**
+	 * Customize WordPress Admin Icons
+	 * 
+	 * @author Craig Grella
+	 * @link http://orgspring.com
+	 *
+	 */	
+	
+	public function plugin_header() {
+    global $post_type;
+    ?>
+    <style>
+	    <?php if (($_GET['post_type'] == 'os_prayer_request')) : ?>
+	    #icon-edit { background:transparent url('<?php echo 'includes/book-open-bookmark.png';?>') no-repeat; }     
+	    <?php endif; ?>
+	    #adminmenu #menu-posts-gallery div.wp-menu-image{background:transparent url("<?php echo 'includes/book-open-bookmark.png';?>") no-repeat center center;}
+	    #adminmenu #menu-posts-gallery:hover div.wp-menu-image,#adminmenu #menu-posts-gallery.wp-has-current-submenu div.wp-menu-image{background:transparent url("<?php echo 'includes/book-open-bookmark.png';?>") no-repeat center center;}  
+	</style>
+	<?php
 	}
 	
 }

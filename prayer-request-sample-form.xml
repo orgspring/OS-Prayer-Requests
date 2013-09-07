@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms version="1.7.7">
+	<form labelPlacement="top_label" postAuthor="11" postCategory="13" postFormat="0" postStatus="pending">
+		<title><![CDATA[Prayer Request]]></title>
+		<description><![CDATA[To request a prayer, please fill out the form below in its entirety.]]></description>
+		<descriptionPlacement><![CDATA[below]]></descriptionPlacement>
+		<button type="text">
+			<text><![CDATA[Submit Prayer Request]]></text>
+		</button>
+		<fields>
+			<field id="2" isRequired="1" size="medium" type="post_custom_field" postCustomFieldName="cmb_ospr_fname" inputType="text">
+				<label><![CDATA[First Name]]></label>
+			</field>
+			<field id="4" isRequired="1" size="medium" type="post_custom_field" postCustomFieldName="cmb_ospr_lname" inputType="text">
+				<label><![CDATA[Last Name]]></label>
+			</field>
+			<field id="7" isRequired="1" size="medium" type="email">
+				<label><![CDATA[Email Address]]></label>
+			</field>
+			<field id="1" isRequired="1" size="medium" type="post_title">
+				<description><![CDATA[Summarize your prayer in just a few words. Example: A Prayer for Healing, or Please Pray for my Father]]></description>
+				<inputName><![CDATA[ospr_autotitle]]></inputName>
+				<label><![CDATA[Prayer Summary]]></label>
+				<saveAsCPT><![CDATA[os_prayer_request]]></saveAsCPT>
+			</field>
+			<field id="5" isRequired="1" size="medium" type="post_content">
+				<label><![CDATA[Prayer Request]]></label>
+			</field>
+			<field id="6" isRequired="1" size="small" type="post_custom_field" postCustomFieldName="cmb_ospr_privacy" inputType="select" enableChoiceValue="1">
+				<description><![CDATA[By default, all prayer requests are public and appear on the  website. Please select "Private" if you'd like your prayer request to remain private and NOT show up on the website.]]></description>
+				<label><![CDATA[Privacy]]></label>
+				<choices>
+					<choice isSelected="1">
+						<text><![CDATA[Public]]></text>
+						<value><![CDATA[public]]></value>
+					</choice>
+					<choice>
+						<text><![CDATA[Private]]></text>
+						<value><![CDATA[private]]></value>
+					</choice>
+				</choices>
+			</field>
+		</fields>
+		<confirmations>
+			<confirmation id="52247d6e9f883" isDefault="1" type="message">
+				<name><![CDATA[Default Confirmation]]></name>
+				<message><![CDATA[Your prayer request has been submitted. It will be reviewed shortly and when published it will appear on the <a href="/prayer-requests"> Prayer Requests Page</a>.]]></message>
+			</confirmation>
+		</confirmations>
+		<notifications>
+			<notification id="52247d6e9e69e">
+				<to><![CDATA[{admin_email}]]></to>
+				<name><![CDATA[Admin Notification]]></name>
+				<event><![CDATA[form_submission]]></event>
+				<toType><![CDATA[email]]></toType>
+				<subject><![CDATA[New submission from {form_title}]]></subject>
+				<message><![CDATA[{all_fields}]]></message>
+			</notification>
+			<notification id="5224be920a4a3">
+				<name><![CDATA[User Notification]]></name>
+				<event><![CDATA[form_submission]]></event>
+				<to><![CDATA[7]]></to>
+				<toType><![CDATA[field]]></toType>
+				<subject><![CDATA[ Website Prayer Request]]></subject>
+				<message><![CDATA[Your prayer request has been received.
+
+Once reviewed and published, it will appear on the <a title="Prayer Request" href="/prayer-requests/" target="_blank"> Prayer Requests Page</a>.  Thank you.
+
+&nbsp;]]></message>
+				<from><![CDATA[{admin_email}]]></from>
+				<fromName><![CDATA[]]></fromName>
+				<replyTo><![CDATA[{admin_email}]]></replyTo>
+			</notification>
+		</notifications>
+	</form>
+</forms>
